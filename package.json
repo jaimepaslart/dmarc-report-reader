@@ -1,0 +1,38 @@
+{
+  "name": "dmarc-report-reader",
+  "version": "0.1.0",
+  "description": "Lecteur de rapports DMARC agrégés (XML, .gz, .zip) en TypeScript, sans dépendance.",
+  "license": "MIT",
+  "author": "Paul Bihr",
+  "homepage": "https://monscoresecurite.fr/outils/lecteur-rapport-dmarc",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaimepaslart/dmarc-report-reader.git"
+  },
+  "keywords": ["dmarc", "dmarc-reports", "rua", "email-security", "spf", "dkim", "typescript"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "LICENSE", "README.md"],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}
